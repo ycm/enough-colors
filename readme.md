@@ -27,7 +27,9 @@ let g:NERDTreeStatusline = '%#Normal#'
 
 Terminal, inactive statusline, folds, visual selection, NERDTree
 
-![](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_transp.png)
+![](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_demo.png)
+
+![](https://github.com/ycm/enough-colors/blob/master/gallery/lightmode_demo.png)
 
 Dark mode palette
 
