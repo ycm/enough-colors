@@ -51,7 +51,8 @@ Light mode palette
 
 ## Todos
 
+- [x] Make light mode
 - [ ] Fix cursor
 - [ ] Fix matching parens
 - [ ] Fix terminal colors
-- [x] Make light mode
+- [ ] Add better LaTeX support

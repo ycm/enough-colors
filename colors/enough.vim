@@ -209,7 +209,7 @@ else
   hi Visual guifg=NONE guibg=#d2e6f0 gui=NONE cterm=NONE
   hi VisualNOS guifg=NONE guibg=#d2e6f0 gui=NONE cterm=NONE
   hi WarningMsg guifg=#8c8200 guibg=NONE gui=italic cterm=italic
-  hi WildMenu guifg=#8c8200 guibg=#fafab4 gui=NONE cterm=NONE
+  hi WildMenu guifg=#8c8200 guibg=#fafab4 gui=italic cterm=italic
   hi Comment guifg=#787878 guibg=NONE gui=italic cterm=italic
   hi Constant guifg=#0050b4 guibg=NONE gui=NONE cterm=NONE
   hi Error guifg=#c82828 guibg=NONE gui=italic cterm=italic
@@ -251,6 +251,7 @@ else
     hi StatusLine gui=NONE cterm=NONE
     hi StatusLineTerm gui=NONE cterm=NONE
     hi WarningMsg gui=NONE cterm=NONE
+    hi WildMenu gui=NONE cterm=NONE
     hi Comment gui=NONE cterm=NONE
     hi Error gui=NONE cterm=NONE
     hi NERDTreeCWD gui=NONE cterm=NONE
@@ -405,7 +406,7 @@ if s:t_Co >= 256
     hi Visual ctermfg=NONE ctermbg=254 cterm=NONE
     hi VisualNOS ctermfg=NONE ctermbg=254 cterm=NONE
     hi WarningMsg ctermfg=100 ctermbg=NONE cterm=italic
-    hi WildMenu ctermfg=100 ctermbg=229 cterm=NONE
+    hi WildMenu ctermfg=100 ctermbg=229 cterm=italic
     hi Comment ctermfg=243 ctermbg=NONE cterm=italic
     hi Constant ctermfg=26 ctermbg=NONE cterm=NONE
     hi Error ctermfg=160 ctermbg=NONE cterm=italic
@@ -447,6 +448,7 @@ if s:t_Co >= 256
       hi StatusLine cterm=NONE
       hi StatusLineTerm cterm=NONE
       hi WarningMsg cterm=NONE
+      hi WildMenu cterm=NONE
       hi Comment cterm=NONE
       hi Error cterm=NONE
       hi NERDTreeCWD cterm=NONE
@@ -604,7 +606,7 @@ if s:t_Co >= 8
     hi Visual ctermfg=NONE ctermbg=LightCyan cterm=NONE
     hi VisualNOS ctermfg=NONE ctermbg=LightCyan cterm=NONE
     hi WarningMsg ctermfg=DarkYellow ctermbg=NONE cterm=italic
-    hi WildMenu ctermfg=DarkYellow ctermbg=LightYellow cterm=NONE
+    hi WildMenu ctermfg=DarkYellow ctermbg=LightYellow cterm=italic
     hi Comment ctermfg=DarkGrey ctermbg=NONE cterm=italic
     hi Constant ctermfg=DarkBlue ctermbg=NONE cterm=NONE
     hi Error ctermfg=DarkRed ctermbg=NONE cterm=italic
@@ -646,6 +648,7 @@ if s:t_Co >= 8
       hi StatusLine cterm=NONE
       hi StatusLineTerm cterm=NONE
       hi WarningMsg cterm=NONE
+      hi WildMenu cterm=NONE
       hi Comment cterm=NONE
       hi Error cterm=NONE
       hi NERDTreeCWD cterm=NONE
@@ -663,8 +666,8 @@ endif
 " Color: blue                 rgb( 35,  35,  45)     ~        DarkBlue
 " Color: magenta              rgb( 45,  35,  45)     ~        DarkMagenta
 " Color: cyan                 rgb( 35,  40,  40)     ~        DarkCyan
-" Color: brightblack          rgb( 40,  40,  40)     ~        DarkGrey
 " Color: lightgrey            rgb(100, 100, 100)     ~        LightGrey
+" Color: brightblack          rgb( 40,  40,  40)     ~        DarkGrey
 " Color: brightred            rgb(180,  90,  90)     ~        LightRed
 " Color: brightgreen          rgb(110, 180, 110)     ~        LightGreen
 " Color: brightyellow         rgb(180, 140,  90)     ~        LightYellow

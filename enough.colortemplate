@@ -281,7 +281,7 @@ VertSplit            black             none
 Visual               none              brightcyan
 VisualNOS            none              brightcyan
 WarningMsg           yellow            none              italic
-WildMenu             yellow            brightyellow
+WildMenu             yellow            brightyellow      italic
 
 ; Other conventional group names (see `:help group-name`)
 Comment              brightblack       none              italic
