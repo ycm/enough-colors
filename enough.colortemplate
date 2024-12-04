@@ -73,8 +73,8 @@ Color: yellow               rgb( 45,  45,  35)     ~        DarkYellow
 Color: blue                 rgb( 35,  35,  45)     ~        DarkBlue
 Color: magenta              rgb( 45,  35,  45)     ~        DarkMagenta
 Color: cyan                 rgb( 35,  40,  40)     ~        DarkCyan
-Color: brightblack          rgb( 40,  40,  40)     ~        DarkGrey
 Color: lightgrey            rgb(100, 100, 100)     ~        LightGrey
+Color: brightblack          rgb( 40,  40,  40)     ~        DarkGrey
 Color: brightred            rgb(180,  90,  90)     ~        LightRed
 Color: brightgreen          rgb(110, 180, 110)     ~        LightGreen
 Color: brightyellow         rgb(180, 140,  90)     ~        LightYellow
@@ -200,108 +200,130 @@ Background: light
 
 ; Color palette for light variant {{{
 ; Color name                GUI                  Base256    Base16 (optional)
-Color: black                rgb( 83,  88,  95)     ~        Black
-Color: red                  rgb(255,   0,   0)     ~        DarkRed
-Color: green                rgb(  0, 255,   0)     ~        DarkGreen
-Color: yellow               rgb(255, 255,   0)     ~        DarkYellow
-Color: blue                 rgb(  0,   0, 255)     ~        DarkBlue
-Color: magenta              rgb(255,   0, 255)     ~        DarkMagenta
-Color: cyan                 rgb(  0, 255, 255)     ~        DarkCyan
-Color: white                rgb(235, 235, 235)     ~        LightGrey
-Color: brightblack          rgb(210, 210, 210)     ~        DarkGrey
-Color: brightred            rgb(255, 100,   0)     ~        LightRed
-Color: brightgreen          rgb(100, 255,   0)     ~        LightGreen
-Color: brightyellow         rgb(255, 255, 100)     ~        LightYellow
-Color: brightblue           rgb(  0, 100, 255)     ~        LightBlue
-Color: brightmagenta        rgb(255, 100, 255)     ~        LightMagenta
-Color: brightcyan           rgb(100, 255, 255)     ~        LightCyan
-; You may use hexadecimal values, too, and you may provide an explicit base-256 color:
-Color: brightwhite          #ffffff                231      white
+Color: black                rgb( 40,  40,  40)   ~          Black
+Color: red                  rgb(200,  40,  40)   ~          DarkRed
+Color: green                rgb( 40, 140,  30)   ~          DarkGreen
+Color: yellow               rgb(140, 130,   0)   ~          DarkYellow
+Color: blue                 rgb(  0,  80, 180)   ~          DarkBlue
+Color: magenta              rgb(120,  60, 170)   ~          DarkMagenta
+Color: cyan                 rgb( 80, 140, 120)   ~          DarkCyan
+Color: lightgrey            rgb(240, 240, 240)   ~          LightGrey
+Color: brightblack          rgb(120, 120, 120)   ~          DarkGrey
+Color: brightred            rgb(250, 180, 180)   ~          LightRed
+Color: brightgreen          rgb(200, 240, 200)   ~          LightGreen
+Color: brightyellow         rgb(250, 250, 180)   ~          LightYellow
+Color: brightblue           rgb(200, 220, 240)   ~          LightBlue
+Color: brightmagenta        rgb(250, 235, 250)   ~          LightMagenta
+Color: brightcyan           rgb(210, 230, 240)   ~          LightCyan
+Color: brightwhite          rgb(255, 255, 255)   ~          White
 ; }}}
 
 ; Terminal colors for light variant {{{
-Term colors: black red green yellow blue magenta cyan white
+Term colors: black red green yellow blue magenta cyan lightgrey
 Term colors: brightblack brightred brightgreen brightyellow
 Term colors: brightblue brightmagenta brightcyan brightwhite
 ; }}}
 
 ; Definitions common to all variants {{{
 Variant: gui
-#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
+#if get(g:, 'enough_colors_opt_transp_bg', 0) && !has('gui_running')
 Variant: 256 8
-#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
+#if get(g:, 'enough_colors_opt_transp_bg', 0)
 Variant: gui 256 8
     Normal           black             none
     Terminal         black             none
 #else
-    Normal           black             white
-    Terminal         black             white
+    Normal           black             none
+    Terminal         black             none
 #endif
 
 ; Group              Foreground        Background        Attributes
-ColorColumn          fg                black
+ColorColumn          none              lightgrey
 Conceal              none              none
-Cursor               black             white
-CursorColumn         black             white
-CursorLine           black             white
-CursorLineNr         black             white
-DiffAdd              black             white             reverse
-DiffChange           black             white             reverse
-DiffDelete           black             white             reverse
-DiffText             black             white             bold,reverse
-Directory            black             white
-EndOfBuffer          black             white
-ErrorMsg             black             white             reverse
-FoldColumn           black             white
-Folded               black             white             italic
-IncSearch            black             white             t=reverse g=standout
-LineNr               black             white
-MatchParen           black             white
-ModeMsg              black             white
-MoreMsg              black             white
-NonText              black             white
-Pmenu                black             white
-PmenuSbar            black             white
-PmenuSel             black             white
-PmenuThumb           black             white
-Question             black             white
-Search               black             white
-SignColumn           black             white
-SpecialKey           black             white
-SpellBad             black             white             s=red
-SpellCap             black             white             s=blue
-SpellLocal           black             white             s=magenta
-SpellRare            black             white             s=cyan reverse
-StatusLine           black             white
-StatusLineNC         black             white
-TabLine              black             white
-TabLineFill          black             white
-TabLineSel           black             white
-Title                black             white
-VertSplit            black             white
-Visual               black             white
-VisualNOS            black             white
-WarningMsg           black             white
-WildMenu             black             white
+Cursor               brightwhite       black
+CursorLine           none              lightgrey
+CursorLineNr         brightblack       none
+DiffAdd              brightwhite       none              reverse
+DiffChange           brightwhite       none              reverse
+DiffDelete           brightwhite       none              reverse
+DiffText             brightwhite       none              bold,reverse
+Directory            blue              none
+EndOfBuffer          brightblack       none
+FoldColumn           brightwhite       black
+Folded               magenta           brightmagenta     italic
+IncSearch            green             brightgreen
+LineNr               brightblack       none
+ModeMsg              black             none 
+MatchParen           black             none 
+MoreMsg              black             none 
+NonText              black             none 
+Pmenu                black             none 
+PmenuSbar            black             none 
+PmenuSel             black             none              reverse
+PmenuThumb           black             none 
+Question             black             none 
+Search               yellow            brightyellow
+SignColumn           none              none
+SpecialKey           black             none  
+SpellBad             black             none              s=red
+SpellCap             black             none              s=blue
+SpellLocal           black             none              s=magenta
+SpellRare            black             none              s=cyan reverse
+StatusLine           blue              brightblue        italic
+StatusLineNC         brightblack       brightblue
+StatusLineTerm       green             brightgreen       italic
+StatusLineTermNC     brightblack       brightgreen
+TabLine              black             none 
+TabLineFill          black             none 
+TabLineSel           black             none 
+Title                black             none
+VertSplit            black             none
+Visual               none              brightcyan
+VisualNOS            none              brightcyan
+WarningMsg           yellow            none              italic
+WildMenu             yellow            brightyellow
+
 ; Other conventional group names (see `:help group-name`)
-Comment              black             none              italic
-Constant             black             none
-Error                black             white             reverse
+Comment              brightblack       none              italic
+Constant             blue              none
+Error                red               none              italic
 Identifier           black             none
 Ignore               black             none
-PreProc              black             none
-Special              black             none
-Statement            black             none
+Statement            red               none
+PreProc              red               none
+Operator             black             none
+Special              black             none 
+String               magenta           none
 Todo                 black             none
-Type                 black             none
-Underlined           black             none
+Type                 red               none
+Underlined           black             none              underline
+Quote             -> String
+CursorColumn      -> CursorLine
+Number            -> Constant
+ErrorMsg          -> Error
 ; See `:help CursorIM`
 CursorIM             none              fg
 ; See `:help window-toolbar`
-ToolbarLine          none              black
-ToolbarButton        black             white             bold
+ToolbarLine          none              lightgrey
+ToolbarButton        black             lightgrey         bold
 ; }}}
 
 ; Additional highlight groups {{{
 ; Add additional highlight groups here if you want
+NERDTreeCWD          brightblack         none              italic
+NERDTreeExecFile     magenta           none
+ALEWarning           none              none
+ALEError             none              none
+NERDTreeDirSlash      -> Directory
+ALEVirtualTextWarning -> WarningMsg
+ALEWarningSign        -> WarningMsg
+ALEWarningSign        -> WarningMsg
+ALEVirtualTextError   -> ErrorMsg
+ALEErrorSign          -> ErrorMsg
+luaTable              -> Normal
+jsonKeyword           -> Normal
+jsonQuote             -> Normal
+jsonString            -> Normal
+htmlTag               -> Keyword
+htmlEndTag            -> Keyword
 ; }}}
