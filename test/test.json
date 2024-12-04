@@ -1,0 +1,15 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "isActive": true,
+    "skills": ["Python", "JavaScript", "SQL"],
+    "address": {
+        "street": "123 Elm Street",
+        "city": "Somewhere",
+        "zip": "12345"
+    },
+    "projects": [
+        {"name": "Website", "completed": true},
+        {"name": "Mobile App", "completed": false}
+    ]
+}

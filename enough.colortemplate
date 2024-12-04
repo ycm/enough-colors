@@ -31,7 +31,6 @@ Define               -> PreProc
 Delimiter            -> Special
 Exception            -> Statement
 Float                -> Constant
-Function             -> Identifier
 Include              -> PreProc
 Keyword              -> Statement
 Label                -> Statement
@@ -40,7 +39,6 @@ LineNrBelow          -> LineNr
 Macro                -> PreProc
 MessageWindow        -> WarningMsg
 Number               -> Constant
-Operator             -> Statement
 PmenuKind            -> Pmenu
 PmenuKindSel         -> PmenuSel
 PmenuExtra           -> Pmenu
@@ -55,12 +53,8 @@ Removed              -> diffRemoved
 Repeat               -> Statement
 SpecialChar          -> Special
 SpecialComment       -> Special
-StatusLineTerm       -> StatusLine
-StatusLineTermNC     -> StatusLineNC
-StorageClass         -> Type
-String               -> Constant
 Structure            -> Type
-Tag                  -> Special
+StorageClass         -> Type
 Typedef              -> Type
 debugBreakpoint      -> SignColumn
 debugPC              -> SignColumn
@@ -73,29 +67,27 @@ Background: dark
 ; Color palette for dark variant {{{
 ; Color name                GUI                  Base256    Base16 (optional)
 Color: black                rgb( 30,  30,  30)     ~        Black
-Color: red                  rgb(255,   0,   0)     ~        DarkRed
-Color: green                rgb( 35,  50,  35)     ~        DarkGreen
-Color: yellow               rgb(255, 255,   0)     ~        DarkYellow
-Color: blue                 rgb(  0,   0, 255)     ~        DarkBlue
-Color: magenta              rgb(255,   0, 255)     ~        DarkMagenta
-Color: cyan                 rgb(  0, 255, 255)     ~        DarkCyan
-Color: white                rgb(235, 235, 235)     ~        white
-Color: brightblack          rgb( 45,  45,  45)     ~        DarkGrey
+Color: red                  rgb( 45,  35,  35)     ~        DarkRed
+Color: green                rgb( 35,  45,  35)     ~        DarkGreen
+Color: yellow               rgb( 45,  45,  35)     ~        DarkYellow
+Color: blue                 rgb( 35,  35,  45)     ~        DarkBlue
+Color: magenta              rgb( 45,  35,  45)     ~        DarkMagenta
+Color: cyan                 rgb( 35,  40,  40)     ~        DarkCyan
+Color: brightblack          rgb( 40,  40,  40)     ~        DarkGrey
+Color: lightgrey            rgb(100, 100, 100)     ~        LightGrey
 Color: brightred            rgb(180,  90,  90)     ~        LightRed
 Color: brightgreen          rgb(110, 180, 110)     ~        LightGreen
 Color: brightyellow         rgb(180, 140,  90)     ~        LightYellow
 Color: brightblue           rgb(130, 180, 220)     ~        LightBlue
 Color: brightmagenta        rgb(180, 110, 180)     ~        LightMagenta
-Color: brightcyan           rgb(100, 255, 255)     ~        LightCyan
+Color: brightcyan           rgb(100, 180, 160)     ~        LightCyan
+Color: brightwhite          rgb(190, 190, 190)     ~        White
 
 ; You may use hexadecimal values, too, and you may provide an explicit base-256 color:
-Color: brightwhite          #e0e0ed                231      white
-Color: midgrey              rgb( 55,  55,  55)     ~        DarkGrey
-Color: brightgrey           rgb(100, 100, 100)     ~        LightGrey
 ; }}}
 
 ; Terminal colors for dark variant {{{
-Term colors: black red green yellow blue magenta cyan white
+Term colors: black red green yellow blue magenta cyan lightgrey
 Term colors: brightblack brightred brightgreen brightyellow
 Term colors: brightblue brightmagenta brightcyan brightwhite
 ; }}}
@@ -106,86 +98,102 @@ Variant: gui
 Variant: 256 8
 #if get(g:, 'enough_colors_opt_transp_bg', 0)
 Variant: gui 256 8
-    Normal           white             none
-    Terminal         white             none
+    Normal           brightwhite       none
+    Terminal         brightwhite       none
 #else
-    Normal           white             black
-    Terminal         white             black
+    Normal           brightwhite       black
+    Terminal         brightwhite       black
 #endif
 
 ; Group              Foreground        Background        Attributes
-ColorColumn          fg                black
+ColorColumn          none              brightblack
 Conceal              none              none
-Cursor               white             black
-CursorColumn         white             black
+Cursor               brightwhite       black
 CursorLine           none              brightblack
-CursorLineNr         brightgrey        black
-DiffAdd              white             black             reverse
-DiffChange           white             black             reverse
-DiffDelete           white             black             reverse
-DiffText             white             black             bold,reverse
-Directory            brightblue        black
-EndOfBuffer          white             black
-FoldColumn           white             black
-Folded               white             black             italic
-IncSearch            none              black             t=reverse g=standout
-LineNr               brightgrey        black
-MatchParen           white             black
-ModeMsg              white             black
-MoreMsg              white             black
-NonText              white             black
-Pmenu                white             black
-PmenuSbar            white             black
-PmenuSel             white             black             reverse
-PmenuThumb           white             black
-Question             white             black
-Search               none              midgrey
-SignColumn           white             black
-SpecialKey           white             black
-SpellBad             white             black             s=red
-SpellCap             white             black             s=blue
-SpellLocal           white             black             s=magenta
-SpellRare            white             black             s=cyan reverse
-StatusLine           white             midgrey
-StatusLineNC         white             black
-TabLine              white             black
-TabLineFill          white             black
-TabLineSel           white             black
-Title                brightgreen       black
-VertSplit            brightgrey        black
-Visual               white             midgrey
-VisualNOS            white             black
+CursorLineNr         lightgrey         none
+DiffAdd              brightwhite       black             reverse
+DiffChange           brightwhite       black             reverse
+DiffDelete           brightwhite       black             reverse
+DiffText             brightwhite       black             bold,reverse
+Directory            brightblue        none
+EndOfBuffer          lightgrey         none
+FoldColumn           brightwhite       black
+Folded               brightmagenta     magenta           italic
+IncSearch            brightgreen       green
+LineNr               lightgrey         none
+MatchParen           brightwhite       black
+ModeMsg              brightwhite       black
+MoreMsg              brightwhite       black
+NonText              brightwhite       black
+Pmenu                brightwhite       black
+PmenuSbar            brightwhite       black
+PmenuSel             brightwhite       black             reverse
+PmenuThumb           brightwhite       black
+Question             brightwhite       black
+Search               brightyellow      yellow
+SignColumn           brightwhite       none
+SpecialKey           brightwhite       black
+SpellBad             brightwhite       black             s=red
+SpellCap             brightwhite       black             s=blue
+SpellLocal           brightwhite       black             s=magenta
+SpellRare            brightwhite       black             s=cyan reverse
+StatusLine           brightblue        blue
+StatusLineNC         lightgrey         blue
+StatusLineTerm       brightgreen       green
+StatusLineTermNC     lightgrey         green
+TabLine              brightwhite       black
+TabLineFill          brightwhite       black
+TabLineSel           brightwhite       black
+Title                brightwhite       none
+VertSplit            lightgrey         none
+Visual               brightcyan        cyan
+VisualNOS            brightcyan        cyan
 WarningMsg           brightyellow      none              italic
-WildMenu             white             black
+WildMenu             brightyellow      yellow
+
 ; Other conventional group names (see `:help group-name`)
-Comment              brightgrey        none              italic
+Comment              lightgrey         none              italic
 Constant             brightblue        none
 Error                brightred         none              italic
-Identifier           brightyellow      none
-Ignore               white             none
+Identifier           brightwhite       none
+Ignore               brightwhite       none
 PreProc              brightred         none
-Special              brightblue        none
 Statement            brightred         none
+Operator             brightwhite       none
+Special              brightwhite       none 
 String               brightmagenta     none
-Todo                 white             none
+Todo                 brightwhite       none
 Type                 brightred         none
-Underlined           white             none              underline
+Underlined           brightwhite       none              underline
+Quote             -> String
+CursorColumn      -> CursorLine
 Number            -> Constant
 ErrorMsg          -> Error
 ; See `:help CursorIM`
 CursorIM             none              fg
 ; See `:help window-toolbar`
-ToolbarLine          none              white
-ToolbarButton        white             black             bold
+ToolbarLine          none              brightblack
+ToolbarButton        brightwhite       black             bold
 ; }}}
 
 ; Additional highlight groups {{{
 ; Add additional highlight groups here if you want
+NERDTreeCWD          lightgrey         none              italic
+NERDTreeExecFile     brightmagenta     none
+ALEWarning           none              none
+ALEError             none              none
 NERDTreeDirSlash      -> Directory
 ALEVirtualTextWarning -> WarningMsg
 ALEWarningSign        -> WarningMsg
+ALEWarningSign        -> WarningMsg
 ALEVirtualTextError   -> ErrorMsg
 ALEErrorSign          -> ErrorMsg
+luaTable              -> Normal
+jsonKeyword           -> Normal
+jsonQuote             -> Normal
+jsonString            -> Normal
+htmlTag               -> Keyword
+htmlEndTag            -> Keyword
 ; }}}
 
 Background: light
