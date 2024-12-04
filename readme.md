@@ -2,6 +2,8 @@
 
 Sparse highlighting
 
+![](https://github.com/ycm/enough-colors/blob/master/gallery/splash.png)
+
 ## Setup
 
 Inside `.vimrc`:
@@ -21,9 +23,9 @@ let g:NERDTreeStatusline = '%#Normal#'
 
 ## Gallery
 
-Terminal, inactive statusline, folds, visual selection, linting (ALE)
+Terminal, inactive statusline, folds, visual selection, linting (ALE), NERDTree
 
-![]()
+![](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_transp.png)
 
 ## Todos
 
