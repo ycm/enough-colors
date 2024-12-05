@@ -48,7 +48,7 @@ PmenuMatchSel        -> PmenuSel
 PopupNotification    -> WarningMsg
 PopupSelected        -> PmenuSel
 PreCondit            -> PreProc
-QuickFixLine         ->  Search
+QuickFixLine         -> Search
 Removed              -> diffRemoved
 Repeat               -> Statement
 SpecialChar          -> Special
@@ -58,6 +58,7 @@ StorageClass         -> Type
 Typedef              -> Type
 debugBreakpoint      -> SignColumn
 debugPC              -> SignColumn
+vimCommentString     -> Comment
 ; See `:help lCursor`
 lCursor              -> Cursor
 ; }}}
@@ -127,7 +128,7 @@ MoreMsg              brightwhite       black
 NonText              brightwhite       black
 Pmenu                brightwhite       black
 PmenuSbar            brightwhite       black
-PmenuSel             brightwhite       black             reverse
+PmenuSel             brightyellow      yellow
 PmenuThumb           brightwhite       black
 Question             brightwhite       black
 Search               brightyellow      yellow
@@ -182,18 +183,26 @@ NERDTreeCWD          lightgrey         none              italic
 NERDTreeExecFile     brightmagenta     none
 ALEWarning           none              none
 ALEError             none              none
-NERDTreeDirSlash      -> Directory
+NERDTreeDirSlash     -> Directory
 ALEVirtualTextWarning -> WarningMsg
-ALEWarningSign        -> WarningMsg
-ALEWarningSign        -> WarningMsg
-ALEVirtualTextError   -> ErrorMsg
-ALEErrorSign          -> ErrorMsg
-luaTable              -> Normal
-jsonKeyword           -> Normal
-jsonQuote             -> Normal
-jsonString            -> Normal
-htmlTag               -> Keyword
-htmlEndTag            -> Keyword
+ALEWarningSign       -> WarningMsg
+ALEWarningSign       -> WarningMsg
+ALEVirtualTextError  -> ErrorMsg
+ALEErrorSign         -> ErrorMsg
+luaTable             -> Normal
+jsonKeyword          -> Normal
+jsonQuote            -> Normal
+jsonString           -> Normal
+htmlTag              -> Keyword
+htmlEndTag           -> Keyword
+HarpyFileNotFound    -> Error
+HarpySelectedFile    brightgreen       green
+GenericRedPop        brightred         red               bold italic
+GenericGreenPop      brightgreen       green             bold italic
+GenericYellowPop     brightyellow      yellow            bold italic
+GenericBluePop       brightblue        blue              bold italic
+GenericMagentaPop    brightmagenta     magenta           bold italic
+GenericCyanPop       brightcyan        cyan              bold italic
 ; }}}
 
 Background: light
@@ -259,7 +268,7 @@ MoreMsg              black             none
 NonText              black             none 
 Pmenu                black             none 
 PmenuSbar            black             none 
-PmenuSel             black             none              reverse
+PmenuSel             yellow            brightyellow
 PmenuThumb           black             none 
 Question             black             none 
 Search               yellow            brightyellow
@@ -326,4 +335,12 @@ jsonQuote             -> Normal
 jsonString            -> Normal
 htmlTag               -> Keyword
 htmlEndTag            -> Keyword
+HarpyFileNotFound    -> Error
+HarpySelectedFile    green             brightgreen        
+GenericRedPop        red               brightred         bold italic 
+GenericGreenPop      green             brightgreen       bold italic  
+GenericYellowPop     yellow            brightyellow      bold italic  
+GenericBluePop       blue              brightblue        bold italic  
+GenericMagentaPop    magenta           brightmagenta     bold italic  
+GenericCyanPop       cyan              brightcyan        bold italic  
 ; }}}
