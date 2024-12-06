@@ -126,7 +126,7 @@ MatchParen           brightwhite       black
 ModeMsg              brightwhite       black
 MoreMsg              brightwhite       black
 NonText              brightwhite       black
-Pmenu                brightwhite       black
+Pmenu                brightwhite       brightblack
 PmenuSbar            brightwhite       black
 PmenuSel             brightyellow      yellow
 PmenuThumb           brightwhite       black
@@ -179,23 +179,17 @@ ToolbarButton        brightwhite       black             bold
 
 ; Additional highlight groups {{{
 ; Add additional highlight groups here if you want
-NERDTreeCWD          lightgrey         none              italic
+luaTable          -> Normal
+jsonKeyword       -> Normal
+jsonQuote         -> Normal
+jsonString        -> Normal
+htmlTag           -> Keyword
+htmlEndTag        -> Keyword
 NERDTreeExecFile     brightmagenta     none
-ALEWarning           none              none
-ALEError             none              none
-NERDTreeDirSlash     -> Directory
-ALEVirtualTextWarning -> WarningMsg
-ALEWarningSign       -> WarningMsg
-ALEWarningSign       -> WarningMsg
-ALEVirtualTextError  -> ErrorMsg
-ALEErrorSign         -> ErrorMsg
-luaTable             -> Normal
-jsonKeyword          -> Normal
-jsonQuote            -> Normal
-jsonString           -> Normal
-htmlTag              -> Keyword
-htmlEndTag           -> Keyword
-HarpyFileNotFound    -> Error
+NERDTreeCWD       -> Comment
+NERDTreeDirSlash  -> Directory
+YcmInverse           none              none              italic
+HarpyFileNotFound -> Error
 HarpySelectedFile    brightgreen       green
 GenericRedPop        brightred         red               bold italic
 GenericGreenPop      brightgreen       green             bold italic
@@ -266,7 +260,7 @@ ModeMsg              black             none
 MatchParen           black             none 
 MoreMsg              black             none 
 NonText              black             none 
-Pmenu                black             none 
+Pmenu                black             lightgrey 
 PmenuSbar            black             none 
 PmenuSel             yellow            brightyellow
 PmenuThumb           black             none 
@@ -319,23 +313,17 @@ ToolbarButton        black             lightgrey         bold
 
 ; Additional highlight groups {{{
 ; Add additional highlight groups here if you want
-NERDTreeCWD          brightblack         none              italic
+luaTable          -> Normal
+jsonKeyword       -> Normal
+jsonQuote         -> Normal
+jsonString        -> Normal
+htmlTag           -> Keyword
+htmlEndTag        -> Keyword
 NERDTreeExecFile     magenta           none
-ALEWarning           none              none
-ALEError             none              none
-NERDTreeDirSlash      -> Directory
-ALEVirtualTextWarning -> WarningMsg
-ALEWarningSign        -> WarningMsg
-ALEWarningSign        -> WarningMsg
-ALEVirtualTextError   -> ErrorMsg
-ALEErrorSign          -> ErrorMsg
-luaTable              -> Normal
-jsonKeyword           -> Normal
-jsonQuote             -> Normal
-jsonString            -> Normal
-htmlTag               -> Keyword
-htmlEndTag            -> Keyword
-HarpyFileNotFound    -> Error
+NERDTreeCWD       -> Comment
+NERDTreeDirSlash  -> Directory
+YcmInverse           none              none              italic
+HarpyFileNotFound -> Error
 HarpySelectedFile    green             brightgreen        
 GenericRedPop        red               brightred         bold italic 
 GenericGreenPop      green             brightgreen       bold italic  
