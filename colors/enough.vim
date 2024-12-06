@@ -59,7 +59,7 @@ hi! link lCursor Cursor
 
 if &background ==# 'dark'
   if (has('termguicolors') && &termguicolors) || has('gui_running')
-    let g:terminal_ansi_colors = ['#1e1e1e', '#2d2323', '#232d23', '#2d2d23', '#23232d', '#2d232d', '#232828', '#646464', '#282828', '#b45a5a', '#6eb46e', '#b48c5a', '#82b4dc', '#b46eb4', '#64b4a0', '#bebebe']
+    let g:terminal_ansi_colors = ['#000000', '#800000', '#008000', '#808000', '#000080', '#800080', '#008080', '#c0c0c0', '#808080', '#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff', '#00ffff', '#ffffff']
   endif
   if get(g:, 'enough_colors_opt_transp_bg', 0) && !has('gui_running')
     hi Normal guifg=#bebebe guibg=NONE gui=NONE cterm=NONE
@@ -166,7 +166,7 @@ if &background ==# 'dark'
 else
   " Light background
   if (has('termguicolors') && &termguicolors) || has('gui_running')
-    let g:terminal_ansi_colors = ['#282828', '#c82828', '#288c1e', '#8c8200', '#0050b4', '#783caa', '#508c78', '#f0f0f0', '#787878', '#fab4b4', '#c8f0c8', '#fafab4', '#c8dcf0', '#faebfa', '#d2e6f0', '#ffffff']
+    let g:terminal_ansi_colors = ['#000000', '#800000', '#008000', '#808000', '#000080', '#800080', '#008080', '#c0c0c0', '#808080', '#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff', '#00ffff', '#ffffff']
   endif
   if get(g:, 'enough_colors_opt_transp_bg', 0) && !has('gui_running')
     hi Normal guifg=#282828 guibg=NONE gui=NONE cterm=NONE
@@ -708,25 +708,41 @@ if s:t_Co >= 8
 endif
 
 " Background: dark
-" Color: black                rgb( 30,  30,  30)     ~        Black
-" Color: red                  rgb( 45,  35,  35)     ~        DarkRed
-" Color: green                rgb( 35,  45,  35)     ~        DarkGreen
-" Color: yellow               rgb( 45,  45,  35)     ~        DarkYellow
-" Color: blue                 rgb( 35,  35,  45)     ~        DarkBlue
-" Color: magenta              rgb( 45,  35,  45)     ~        DarkMagenta
-" Color: cyan                 rgb( 35,  40,  40)     ~        DarkCyan
-" Color: lightgrey            rgb(100, 100, 100)     ~        LightGrey
-" Color: brightblack          rgb( 40,  40,  40)     ~        DarkGrey
-" Color: brightred            rgb(180,  90,  90)     ~        LightRed
-" Color: brightgreen          rgb(110, 180, 110)     ~        LightGreen
-" Color: brightyellow         rgb(180, 140,  90)     ~        LightYellow
-" Color: brightblue           rgb(130, 180, 220)     ~        LightBlue
-" Color: brightmagenta        rgb(180, 110, 180)     ~        LightMagenta
-" Color: brightcyan           rgb(100, 180, 160)     ~        LightCyan
-" Color: brightwhite          rgb(190, 190, 190)     ~        White
-" Term colors: black red green yellow blue magenta cyan lightgrey
-" Term colors: brightblack brightred brightgreen brightyellow
-" Term colors: brightblue brightmagenta brightcyan brightwhite
+" Color: black                rgb( 30,  30,  30)   ~          Black
+" Color: red                  rgb( 45,  35,  35)   ~          DarkRed
+" Color: green                rgb( 35,  45,  35)   ~          DarkGreen
+" Color: yellow               rgb( 45,  45,  35)   ~          DarkYellow
+" Color: blue                 rgb( 35,  35,  45)   ~          DarkBlue
+" Color: magenta              rgb( 45,  35,  45)   ~          DarkMagenta
+" Color: cyan                 rgb( 35,  40,  40)   ~          DarkCyan
+" Color: lightgrey            rgb(100, 100, 100)   ~          LightGrey
+" Color: brightblack          rgb( 40,  40,  40)   ~          DarkGrey
+" Color: brightred            rgb(180,  90,  90)   ~          LightRed
+" Color: brightgreen          rgb(110, 180, 110)   ~          LightGreen
+" Color: brightyellow         rgb(180, 140,  90)   ~          LightYellow
+" Color: brightblue           rgb(130, 180, 220)   ~          LightBlue
+" Color: brightmagenta        rgb(180, 110, 180)   ~          LightMagenta
+" Color: brightcyan           rgb(100, 180, 160)   ~          LightCyan
+" Color: brightwhite          rgb(190, 190, 190)   ~          White
+" Color: t_black              rgb(  0,   0,   0)   0          Black
+" Color: t_red                rgb(128,   0,   0)   1          DarkRed
+" Color: t_green              rgb(  0, 128,   0)   2          DarkGreen
+" Color: t_yellow             rgb(128, 128,   0)   3          DarkYellow
+" Color: t_blue               rgb(  0,   0, 128)   4          DarkBlue
+" Color: t_magenta            rgb(128,   0, 128)   5          DarkMagenta
+" Color: t_cyan               rgb(  0, 128, 128)   6          DarkCyan
+" Color: t_lightgrey          rgb(192, 192, 192)   7          LightGrey
+" Color: t_brightblack        rgb(128, 128, 128)   8          DarkGrey
+" Color: t_brightred          rgb(255,   0,   0)   9          LightRed
+" Color: t_brightgreen        rgb(  0, 255,   0)   10         LightGreen
+" Color: t_brightyellow       rgb(255, 255,   0)   11         LightYellow
+" Color: t_brightblue         rgb(  0,   0, 255)   12         LightBlue
+" Color: t_brightmagenta      rgb(255,   0, 255)   13         LightMagenta
+" Color: t_brightcyan         rgb(  0, 255, 255)   14         LightCyan
+" Color: t_brightwhite        rgb(255, 255, 255)   15         White
+" Term colors: t_black t_red t_green t_yellow t_blue t_magenta t_cyan t_lightgrey
+" Term colors: t_brightblack t_brightred t_brightgreen t_brightyellow
+" Term colors: t_brightblue t_brightmagenta t_brightcyan t_brightwhite
 " Background: light
 " Color: black                rgb( 40,  40,  40)   ~          Black
 " Color: red                  rgb(200,  40,  40)   ~          DarkRed
@@ -744,7 +760,23 @@ endif
 " Color: brightmagenta        rgb(250, 235, 250)   ~          LightMagenta
 " Color: brightcyan           rgb(210, 230, 240)   ~          LightCyan
 " Color: brightwhite          rgb(255, 255, 255)   ~          White
-" Term colors: black red green yellow blue magenta cyan lightgrey
-" Term colors: brightblack brightred brightgreen brightyellow
-" Term colors: brightblue brightmagenta brightcyan brightwhite
+" Color: t_black              rgb(  0,   0,   0)   0          Black
+" Color: t_red                rgb(128,   0,   0)   1          DarkRed
+" Color: t_green              rgb(  0, 128,   0)   2          DarkGreen
+" Color: t_yellow             rgb(128, 128,   0)   3          DarkYellow
+" Color: t_blue               rgb(  0,   0, 128)   4          DarkBlue
+" Color: t_magenta            rgb(128,   0, 128)   5          DarkMagenta
+" Color: t_cyan               rgb(  0, 128, 128)   6          DarkCyan
+" Color: t_lightgrey          rgb(192, 192, 192)   7          LightGrey
+" Color: t_brightblack        rgb(128, 128, 128)   8          DarkGrey
+" Color: t_brightred          rgb(255,   0,   0)   9          LightRed
+" Color: t_brightgreen        rgb(  0, 255,   0)   10         LightGreen
+" Color: t_brightyellow       rgb(255, 255,   0)   11         LightYellow
+" Color: t_brightblue         rgb(  0,   0, 255)   12         LightBlue
+" Color: t_brightmagenta      rgb(255,   0, 255)   13         LightMagenta
+" Color: t_brightcyan         rgb(  0, 255, 255)   14         LightCyan
+" Color: t_brightwhite        rgb(255, 255, 255)   15         White
+" Term colors: t_black t_red t_green t_yellow t_blue t_magenta t_cyan t_lightgrey
+" Term colors: t_brightblack t_brightred t_brightgreen t_brightyellow
+" Term colors: t_brightblue t_brightmagenta t_brightcyan t_brightwhite
 " vim: et ts=8 sw=2 sts=2
