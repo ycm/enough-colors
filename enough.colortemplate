@@ -317,7 +317,7 @@ TabLine              black             none
 TabLineFill          black             none 
 TabLineSel           black             none 
 Title                black             none
-VertSplit            black             none
+VertSplit            brightblack       none
 Visual               none              brightcyan
 VisualNOS            none              brightcyan
 WarningMsg           yellow            none              italic

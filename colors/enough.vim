@@ -214,7 +214,7 @@ else
   hi TabLineFill guifg=#282828 guibg=NONE gui=NONE cterm=NONE
   hi TabLineSel guifg=#282828 guibg=NONE gui=NONE cterm=NONE
   hi Title guifg=#282828 guibg=NONE gui=NONE cterm=NONE
-  hi VertSplit guifg=#282828 guibg=NONE gui=NONE cterm=NONE
+  hi VertSplit guifg=#787878 guibg=NONE gui=NONE cterm=NONE
   hi Visual guifg=NONE guibg=#d2e6f0 gui=NONE cterm=NONE
   hi VisualNOS guifg=NONE guibg=#d2e6f0 gui=NONE cterm=NONE
   hi WarningMsg guifg=#8c8200 guibg=NONE gui=italic cterm=italic
@@ -427,7 +427,7 @@ if s:t_Co >= 256
     hi TabLineFill ctermfg=235 ctermbg=NONE cterm=NONE
     hi TabLineSel ctermfg=235 ctermbg=NONE cterm=NONE
     hi Title ctermfg=235 ctermbg=NONE cterm=NONE
-    hi VertSplit ctermfg=235 ctermbg=NONE cterm=NONE
+    hi VertSplit ctermfg=243 ctermbg=NONE cterm=NONE
     hi Visual ctermfg=NONE ctermbg=254 cterm=NONE
     hi VisualNOS ctermfg=NONE ctermbg=254 cterm=NONE
     hi WarningMsg ctermfg=100 ctermbg=NONE cterm=italic
@@ -643,7 +643,7 @@ if s:t_Co >= 8
     hi TabLineFill ctermfg=Black ctermbg=NONE cterm=NONE
     hi TabLineSel ctermfg=Black ctermbg=NONE cterm=NONE
     hi Title ctermfg=Black ctermbg=NONE cterm=NONE
-    hi VertSplit ctermfg=Black ctermbg=NONE cterm=NONE
+    hi VertSplit ctermfg=DarkGrey ctermbg=NONE cterm=NONE
     hi Visual ctermfg=NONE ctermbg=LightCyan cterm=NONE
     hi VisualNOS ctermfg=NONE ctermbg=LightCyan cterm=NONE
     hi WarningMsg ctermfg=DarkYellow ctermbg=NONE cterm=italic
