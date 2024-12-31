@@ -4,7 +4,7 @@ sparse syntax highlighting with ![vim-colortemplate](https://github.com/lifepill
 
 preview (with transparency enabled)
 
-![](https://github.com/ycm/enough-colors/blob/master/gallery/splash.png)
+![img-splash](https://github.com/ycm/enough-colors/blob/master/gallery/splash.png)
 
 ## Setup
 
@@ -27,13 +27,13 @@ let g:NERDTreeStatusline = '%#Normal#'
 
 Terminal, inactive statusline, folds, visual selection, NERDTree
 
-![](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_demo.png)
+![img-darkmode-demo](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_demo.png)
 
-![](https://github.com/ycm/enough-colors/blob/master/gallery/lightmode_demo.png)
+![img-lightmode-demo](https://github.com/ycm/enough-colors/blob/master/gallery/lightmode_demo.png)
 
 Dark mode palette
 
-![](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_palette.png)
+![img-darkmode-palette](https://github.com/ycm/enough-colors/blob/master/gallery/darkmode_palette.png)
 
 ```
 #1e1e1e #2d2323 #232d23 #2d2d23 #23232d #2d232d #232828 #646464
@@ -42,18 +42,9 @@ Dark mode palette
 
 Light mode palette
 
-![](https://github.com/ycm/enough-colors/blob/master/gallery/lightmode_palette.png)
+![img-lightmode-palette](https://github.com/ycm/enough-colors/blob/master/gallery/lightmode_palette.png)
 
 ```
 #282828 #c82828 #288c1e #8c8200 #0050b4 #783caa #508c78 #f0f0f0
 #787878 #fab4b4 #c8f0c8 #fafab4 #c8dcf0 #faebfa #d2e6f0 #ffffff
 ```
-
-## Todos
-
-- [x] Make light mode
-- [x] Fix terminal colors
-- [ ] Tweak 8- and 16-color variants
-- [ ] Fix cursor
-- [ ] Fix matching parens
-- [ ] Add better LaTeX support
