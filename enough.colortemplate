@@ -59,8 +59,29 @@ Typedef              -> Type
 debugBreakpoint      -> SignColumn
 debugPC              -> SignColumn
 vimCommentString     -> Comment
+pythonBuiltin        -> Keyword
+helpHyperTextJump    -> Constant
+markdownH2           -> markdownH1
+markdownH3           -> markdownH1
+markdownH4           -> markdownH1
+markdownH5           -> markdownH1
+markdownH6           -> markdownH1
+markdownH1Delimiter  -> markdownH1
+markdownH2Delimiter  -> markdownH2
+markdownH3Delimiter  -> markdownH3
+markdownH4Delimiter  -> markdownH4
+markdownH5Delimiter  -> markdownH5
+markdownH6Delimiter  -> markdownH6
+markdownCodeDelimiter -> markdownCode
 ; See `:help lCursor`
 lCursor              -> Cursor
+VimwikiHeader1       -> markdownH1
+VimwikiHeader2       -> markdownH1
+VimwikiHeader3       -> markdownH1
+VimwikiHeader4       -> markdownH1
+VimwikiHeader5       -> markdownH1
+VimwikiHeader6       -> markdownH1
+VimwikiHeaderChar    -> markdownH1
 ; }}}
 
 Background: dark
@@ -84,20 +105,20 @@ Color: brightmagenta        rgb(180, 110, 180)   ~          LightMagenta
 Color: brightcyan           rgb(100, 180, 160)   ~          LightCyan
 Color: brightwhite          rgb(190, 190, 190)   ~          White
 Color: t_black              rgb(  0,   0,   0)   0          Black
-Color: t_red                rgb(128,   0,   0)   1          DarkRed
-Color: t_green              rgb(  0, 128,   0)   2          DarkGreen
-Color: t_yellow             rgb(128, 128,   0)   3          DarkYellow
-Color: t_blue               rgb(  0,   0, 128)   4          DarkBlue
-Color: t_magenta            rgb(128,   0, 128)   5          DarkMagenta
-Color: t_cyan               rgb(  0, 128, 128)   6          DarkCyan
+Color: t_red                rgb(180,  90,  90)   1          DarkRed
+Color: t_green              rgb(110, 180, 110)   2          DarkGreen
+Color: t_yellow             rgb(180, 140,  90)   3          DarkYellow
+Color: t_blue               rgb(130, 180, 220)   4          DarkBlue
+Color: t_magenta            rgb(180, 110, 180)   5          DarkMagenta
+Color: t_cyan               rgb(100, 180, 160)   6          DarkCyan
 Color: t_lightgrey          rgb(192, 192, 192)   7          LightGrey
 Color: t_brightblack        rgb(128, 128, 128)   8          DarkGrey
-Color: t_brightred          rgb(255,   0,   0)   9          LightRed
-Color: t_brightgreen        rgb(  0, 255,   0)   10         LightGreen
-Color: t_brightyellow       rgb(255, 255,   0)   11         LightYellow
-Color: t_brightblue         rgb(  0,   0, 255)   12         LightBlue
-Color: t_brightmagenta      rgb(255,   0, 255)   13         LightMagenta
-Color: t_brightcyan         rgb(  0, 255, 255)   14         LightCyan
+Color: t_brightred          rgb(180,  90,  90)   9          LightRed
+Color: t_brightgreen        rgb(110, 180, 110)   10         LightGreen
+Color: t_brightyellow       rgb(180, 140,  90)   11         LightYellow
+Color: t_brightblue         rgb(130, 180, 220)   12         LightBlue
+Color: t_brightmagenta      rgb(180, 110, 180)   13         LightMagenta
+Color: t_brightcyan         rgb(100, 180, 160)   14         LightCyan
 Color: t_brightwhite        rgb(255, 255, 255)   15         White
 ; You may use hexadecimal values, too, and you may provide an explicit base-256 color:
 ; }}}
@@ -140,14 +161,13 @@ FoldColumn           brightwhite       black
 Folded               brightmagenta     magenta           italic
 IncSearch            brightgreen       green
 LineNr               lightgrey         none
-MatchParen           brightwhite       black
+MatchParen           brightblue        blue
 ModeMsg              brightwhite       black
 MoreMsg              brightwhite       black
 NonText              brightwhite       black
 Pmenu                brightwhite       brightblack
 PmenuSbar            brightwhite       black
-PmenuSel             brightyellow      yellow
-PmenuThumb           brightwhite       black
+PmenuThumb           brightblue        blue
 Question             brightwhite       black
 Search               brightyellow      yellow
 SignColumn           brightwhite       none
@@ -160,9 +180,9 @@ StatusLine           brightblue        blue
 StatusLineNC         lightgrey         blue
 StatusLineTerm       brightgreen       green
 StatusLineTermNC     lightgrey         green
-TabLine              brightwhite       black
-TabLineFill          brightwhite       black
-TabLineSel           brightwhite       black
+TabLine              lightgrey         none
+TabLineFill          none              none
+TabLineSel           brightblue        blue
 Title                brightwhite       none
 VertSplit            lightgrey         none
 Visual               brightcyan        cyan
@@ -186,6 +206,7 @@ Type                 brightred         none
 Underlined           brightwhite       none              underline
 Quote             -> String
 CursorColumn      -> CursorLine
+; PmenuSel          -> Cursorline
 Number            -> Constant
 ErrorMsg          -> Error
 ; See `:help CursorIM`
@@ -203,12 +224,30 @@ jsonQuote         -> Normal
 jsonString        -> Normal
 htmlTag           -> Keyword
 htmlEndTag        -> Keyword
+markdownH1           brightgreen       none              bold
+markdownCode         brightmagenta     none
+markdownCodeBlock -> markdownCode
 NERDTreeExecFile     brightmagenta     none
-NERDTreeCWD       -> Comment
+NERDTreeCWD       -> Keyword
 NERDTreeDirSlash  -> Directory
 YcmInverse           none              none              italic
 HarpyFileNotFound -> Error
-HarpySelectedFile    brightgreen       green
+HarpyMenuBg       -> Normal
+HarpyMenuBorder      brightgreen       none
+HarpyEntry        -> Normal    
+HarpyEntryFile       brightwhite       none              bold
+HarpyEntrySelected   brightgreen       green
+HarpyEntrySelectedFile brightgreen     green             bold
+VimwikiLink          brightblue        none              underline
+VimwikiBold          brightmagenta     none              bold
+VimwikiItalic        brightmagenta     none              italic
+VimwikiBoldItalic    brightmagenta     none              bold italic
+GenericRed           brightred         red
+GenericGreen         brightgreen       green
+GenericYellow        brightyellow      yellow
+GenericBlue          brightblue        blue
+GenericMagenta       brightmagenta     magenta
+GenericCyan          brightcyan        cyan
 GenericRedPop        brightred         red               bold italic
 GenericGreenPop      brightgreen       green             bold italic
 GenericYellowPop     brightyellow      yellow            bold italic
@@ -220,6 +259,7 @@ GenericCyanPop       brightcyan        cyan              bold italic
 Background: light
 
 ; Color palette for light variant {{{
+;  282828 ffffff 282828 c82828 288c1e 8c8200 0050b4 783caa 508c78 f0f0f0 787878 fab4b4 c8f0c8 fafab4 c8dcf0 faebfa d2e6f0 ffffff
 ; Color name                GUI                  Base256    Base16 (optional)
 Color: black                rgb( 40,  40,  40)   ~          Black
 Color: red                  rgb(200,  40,  40)   ~          DarkRed
@@ -238,20 +278,20 @@ Color: brightmagenta        rgb(250, 235, 250)   ~          LightMagenta
 Color: brightcyan           rgb(210, 230, 240)   ~          LightCyan
 Color: brightwhite          rgb(255, 255, 255)   ~          White
 Color: t_black              rgb(  0,   0,   0)   0          Black
-Color: t_red                rgb(128,   0,   0)   1          DarkRed
-Color: t_green              rgb(  0, 128,   0)   2          DarkGreen
-Color: t_yellow             rgb(128, 128,   0)   3          DarkYellow
-Color: t_blue               rgb(  0,   0, 128)   4          DarkBlue
-Color: t_magenta            rgb(128,   0, 128)   5          DarkMagenta
-Color: t_cyan               rgb(  0, 128, 128)   6          DarkCyan
+Color: t_red                rgb(200,  40,  40)   1          DarkRed
+Color: t_green              rgb( 40, 140,  30)   2          DarkGreen
+Color: t_yellow             rgb(140, 130,   0)   3          DarkYellow
+Color: t_blue               rgb(  0,  80, 180)   4          DarkBlue
+Color: t_magenta            rgb(120,  60, 170)   5          DarkMagenta
+Color: t_cyan               rgb( 80, 140, 120)   6          DarkCyan
 Color: t_lightgrey          rgb(192, 192, 192)   7          LightGrey
 Color: t_brightblack        rgb(128, 128, 128)   8          DarkGrey
-Color: t_brightred          rgb(255,   0,   0)   9          LightRed
-Color: t_brightgreen        rgb(  0, 255,   0)   10         LightGreen
-Color: t_brightyellow       rgb(255, 255,   0)   11         LightYellow
-Color: t_brightblue         rgb(  0,   0, 255)   12         LightBlue
-Color: t_brightmagenta      rgb(255,   0, 255)   13         LightMagenta
-Color: t_brightcyan         rgb(  0, 255, 255)   14         LightCyan
+Color: t_brightred          rgb(200,  40,  40)   9          LightRed
+Color: t_brightgreen        rgb( 40, 140,  30)   10         LightGreen
+Color: t_brightyellow       rgb(140, 130,   0)   11         LightYellow
+Color: t_brightblue         rgb(  0,  80, 180)   12         LightBlue
+Color: t_brightmagenta      rgb(120,  60, 170)   13         LightMagenta
+Color: t_brightcyan         rgb( 80, 140, 120)   14         LightCyan
 Color: t_brightwhite        rgb(255, 255, 255)   15         White
 ; }}}
 
@@ -294,13 +334,12 @@ Folded               magenta           brightmagenta     italic
 IncSearch            green             brightgreen
 LineNr               brightblack       none
 ModeMsg              black             none 
-MatchParen           black             none 
+MatchParen           blue              brightblue
 MoreMsg              black             none 
 NonText              black             none 
 Pmenu                black             lightgrey 
 PmenuSbar            black             none 
-PmenuSel             yellow            brightyellow
-PmenuThumb           black             none 
+PmenuThumb           blue              brightblue 
 Question             black             none 
 Search               yellow            brightyellow
 SignColumn           none              none
@@ -313,9 +352,9 @@ StatusLine           blue              brightblue        italic
 StatusLineNC         brightblack       brightblue
 StatusLineTerm       green             brightgreen       italic
 StatusLineTermNC     brightblack       brightgreen
-TabLine              black             none 
-TabLineFill          black             none 
-TabLineSel           black             none 
+TabLine              brightblack       none 
+TabLineFill          none              none 
+TabLineSel           blue              brightblue 
 Title                black             none
 VertSplit            brightblack       none
 Visual               none              brightcyan
@@ -341,6 +380,7 @@ Quote             -> String
 CursorColumn      -> CursorLine
 Number            -> Constant
 ErrorMsg          -> Error
+; PmenuSel          -> CursorLine
 ; See `:help CursorIM`
 CursorIM             none              fg
 ; See `:help window-toolbar`
@@ -356,12 +396,30 @@ jsonQuote         -> Normal
 jsonString        -> Normal
 htmlTag           -> Keyword
 htmlEndTag        -> Keyword
+markdownH1           green             none              bold
+markdownCode         magenta           none
+markdownCodeBlock -> markdownCode
 NERDTreeExecFile     magenta           none
-NERDTreeCWD       -> Comment
+NERDTreeCWD       -> Keyword
 NERDTreeDirSlash  -> Directory
 YcmInverse           none              none              italic
 HarpyFileNotFound -> Error
-HarpySelectedFile    green             brightgreen        
+HarpyMenuBg       -> Normal
+HarpyMenuBorder      green             none
+HarpyEntry        -> Normal    
+HarpyEntryFile       black             none              bold 
+HarpyEntrySelected   green             brightgreen
+HarpyEntrySelectedFile green           brightgreen       bold
+VimwikiLink          blue              none              underline
+VimwikiBold          magenta           none              bold
+VimwikiItalic        magenta           none              italic
+VimwikiBoldItalic    magenta           none              bold italic
+GenericRed           red               brightred         
+GenericGreen         green             brightgreen       
+GenericYellow        yellow            brightyellow      
+GenericBlue          blue              brightblue        
+GenericMagenta       magenta           brightmagenta     
+GenericCyan          cyan              brightcyan        
 GenericRedPop        red               brightred         bold italic 
 GenericGreenPop      green             brightgreen       bold italic  
 GenericYellowPop     yellow            brightyellow      bold italic  
