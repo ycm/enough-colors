@@ -1,26 +1,30 @@
 # enough-colors
 
-sparse syntax highlighting with ![vim-colortemplate](https://github.com/lifepillar/vim-colortemplate)
+sparse syntax highlighting using ![vim-colortemplate](https://github.com/lifepillar/vim-colortemplate)
 
-preview (with transparency enabled)
+preview (+transparency)
 
 ![img-splash](https://github.com/ycm/enough-colors/blob/master/gallery/splash.png)
 
 ## Setup
 
-Inside `.vimrc`:
+[vim-plug](https://github.com/junegunn/vim-plug):
+```vim
+Plug 'ycm/enough-colors'
+```
 
+`.vimrc`:
 ```vim
 set termguicolors
 set background=light " or dark
-let g:enough_colors_opt_transp_bg=1 " optional, for transparency
-colo enough
+g:enough_colors_opt_transp_bg=1 " optional, for transparency
+colorscheme enough
 ```
 
-Other configs:
+If using NERDTree:
 
 ```vim
-let g:NERDTreeStatusline = '%#Normal#'
+g:NERDTreeStatusline = '%#Normal#'
 ```
 
 ## Gallery
