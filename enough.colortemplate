@@ -60,6 +60,7 @@ debugBreakpoint      -> SignColumn
 debugPC              -> SignColumn
 vimCommentString     -> Comment
 pythonBuiltin        -> Keyword
+pythonOperator       -> pythonBuiltin
 helpHyperTextJump    -> Constant
 markdownH2           -> markdownH1
 markdownH3           -> markdownH1
